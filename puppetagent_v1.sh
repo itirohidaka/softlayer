@@ -41,6 +41,6 @@ apt-get -y install puppet
 echo "4. End of Puppet Agent installation: $?" >> $LOG_FILE
 
 #=======================================================================
-# End
+# End.
 #=======================================================================
 echo "End of Script...: $?" >> $LOG_FILE
