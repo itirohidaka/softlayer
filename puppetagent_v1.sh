@@ -8,7 +8,7 @@
 #=======================================================================
 # 1. Variables
 #=======================================================================
-LOG_FILE=/var/log/rails_bootstrap.log
+LOG_FILE=/var/log/softlayer_bootstrap.log
 
 #=======================================================================
 # 2. Initial Configuration
@@ -17,8 +17,13 @@ sudo su -
 # configuração do arquivo hostname
 sed -i "s/ubuntu/ubuntu_sl_01/g" /etc/hostname
 hostname ubuntu_sl_01
+echo "2.1 End of Step 2.1 - Initial Configuration - Hostname: $?" >> $LOG_FILE
+
 # configuração do arquivo hosts 
-sed -i "s/ubuntu/ubuntu_sl_01/g" /etc/hosts
+#sed -i "s/ubuntu/ubuntu_sl_01/g" /etc/hosts
+sed -i '$ a\127.0.0.1 puppet' /etc/hosts
+echo "2.1 End of Step 2.1 - Initial Configuration - Hosts File: $?" >> $LOG_FILE
+
 echo "2. End of Step 2 - Initial Configuration: $?" >> $LOG_FILE
 
 #=======================================================================
