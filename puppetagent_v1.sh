@@ -22,7 +22,7 @@ echo "2.1 End of Step 2.1 - Initial Configuration - Hostname: $?" >> $LOG_FILE
 # configuração do arquivo hosts
 #sed -i "s/ubuntu/ubuntu_sl_01/g" /etc/hosts
 # Substitute "127.0.0.1" with the Puppet Master IP Address
-sed -i '$ a\127.0.0.1 puppet' /etc/hosts
+sed -i '$ a\169.54.65.91 puppet' /etc/hosts
 echo "2.1 End of Step 2.1 - Initial Configuration - Hosts File: $?" >> $LOG_FILE
 
 echo "2. End of Step 2 - Initial Configuration: $?" >> $LOG_FILE
