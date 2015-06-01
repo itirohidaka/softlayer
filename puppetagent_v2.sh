@@ -49,9 +49,7 @@ echo "4. End of Puppet Agent installation: $?" >> $LOG_FILE
 # configuração do arquivo puppet.conf
 #sed -i "s/ubuntu/ubuntu_sl_01/g" /etc/hosts
 # Substitute "127.0.0.1" with the Puppet Master IP Address
-sed -i "s#templatedir=$confdir/templates#runinterval=60" /etc/puppet/puppet.conf
-sed -i '$ a\[Agent]' /etc/puppet/puppet.conf
-sed -i '$ a\runinterval=60' /etc/puppet/puppet.conf
+sed '/templatedir=/a runinterval=60' /etc/puppet/puppet.conf
 echo "5.1 End of Step 5.1 - Puppet runinterval: $?" >> $LOG_FILE
 
 service puppet restart
