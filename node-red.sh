@@ -26,15 +26,15 @@ echo "2. End of Step 2 - Initial Configuration: $?" >> $LOG_FILE
 #=======================================================================
 # 3. CentOS Update
 #=======================================================================
-yum -y update
+apt-get -y update
 echo "3. End of Linux Update: $?" >> $LOG_FILE
 
 #=======================================================================
 # 4. Pre-requisites for Node-Red (Node.js)
 #=======================================================================
-curl --silent --location https://rpm.nodesource.com/setup | bash -
-sudo yum -y install nodejs
-sudo yum -y install gcc-c++ make
+curl --silent --location https://deb.nodesource.com/setup_0.12 | sudo bash -
+sudo apt-get install --yes nodejs
+sudo apt-get install --yes build-essential
 echo "4. End of Pre-requisites installations for Node-Red: $?" >> $LOG_FILE
 
 #=======================================================================
