@@ -1,7 +1,7 @@
 #!/bin/bash
 #=======================================================================
 # File: nodered.sh
-# Description: nodered instalation for CentOS
+# Description: nodered instalation for Ubuntu
 # Author: Gerson Itiro Hidaka
 # Date: 25/07/2015 (dd/mm/yyy)
 #==============================================================================
@@ -24,7 +24,7 @@ sudo su -
 echo "2. End of Step 2 - Initial Configuration: $?" >> $LOG_FILE
 
 #=======================================================================
-# 3. CentOS Update
+# 3. Ubuntu Update
 #=======================================================================
 apt-get -y update
 echo "3. End of Linux Update: $?" >> $LOG_FILE
