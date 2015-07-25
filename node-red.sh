@@ -16,17 +16,19 @@
 # 1. Variables
 #=======================================================================
 LOG_FILE=/var/log/nodered.log
+echo "1. End of Step 1 - Log Variable: $?" >> $LOG_FILE
 
 #=======================================================================
 # 2. Initial Configuration
 #=======================================================================
-sudo su -
+#sudo su -
 echo "2. End of Step 2 - Initial Configuration: $?" >> $LOG_FILE
 
 #=======================================================================
 # 3. Ubuntu Update
 #=======================================================================
-apt-get -y update
+sudo apt-get -y update
+sudo apt-get -y install curl
 echo "3. End of Linux Update: $?" >> $LOG_FILE
 
 #=======================================================================
