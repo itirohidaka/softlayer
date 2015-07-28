@@ -16,7 +16,7 @@ LOG_FILE=/var/log/softlayer_bootstrap.log
 sudo su -
 
 # configuração do arquivo hosts
-sed -i '$ a\169.54.65.91 puppet' /etc/hosts
+sed -i '$ a\169.54.65.77 puppet' /etc/hosts
 echo "2. End of Step 2 - Initial Configuration: $?" >> $LOG_FILE
 
 #=======================================================================
