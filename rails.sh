@@ -33,6 +33,9 @@ echo "3. End of Linux Update: $?" >> $LOG_FILE
 #=======================================================================
 # 4. Pre-requisites for Rails
 #=======================================================================
+# MySQL Pre-requisites
+#sudo apt-get install mysql-server mysql-client libmysqlclient-dev
+sudo apt-get install libmysqlclient-dev
 # CURL installation
 sudo apt-get -y install curl
 # Node.js installation
@@ -42,7 +45,7 @@ sudo apt-get install --yes nodejs
 gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
 \curl -sSL https://get.rvm.io | bash -s stable --ruby
 source /usr/local/rvm/scripts/rvm
-echo "4. End of Pre-requisites installations for Node-Red: $?" >> $LOG_FILE
+echo "4. End of Pre-requisites installations for Rails: $?" >> $LOG_FILE
 
 #=======================================================================
 # 5. Rails installation
