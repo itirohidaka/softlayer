@@ -19,13 +19,9 @@ LOG_FILE=/var/log/cassandra.log
 echo "1. End of Step 1 - Log Variable: $?" >> $LOG_FILE
 
 #=======================================================================
-# 2. Initial Configuration (Java)
+# 2. Initial Configuration (Java and CURL)
 #=======================================================================
-#sudo su -
-#sudo apt-get install -y software-properties-common
-#sudo add-apt-repository ppa:webupd8team/java -y
 sudo apt-get -y update
-#echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
 sudo apt-get install -y openjdk-7-jdk
 sudo apt-get install -y curl
 echo "2. End of Step 2 - Initial Configuration: $?" >> $LOG_FILE
@@ -37,26 +33,17 @@ sudo apt-get -y update
 echo "3. End of Linux Update: $?" >> $LOG_FILE
 
 #=======================================================================
-# 4. Pre-requisites for Node-Red (Node.js)
+# 4. Pre-requisites for Cassandra
 #=======================================================================
-mkdir ˜/temp
-cd ~/temp
-curl --silent --location http://downloads.datastax.com/community/dsc-cassandra-2.1.9-bin.tar.gz
-#sudo apt-get install --yes nodejs
-#sudo apt-get install --yes build-essential
+echo "deb http://debian.datastax.com/community stable main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
+curl -L http://debian.datastax.com/debian/repo_key | sudo apt-key add -
 echo "4. End of Pre-requisites installations for Cassandra: $?" >> $LOG_FILE
 
 #=======================================================================
 # 5. Cassandra Installation
 #=======================================================================
-#sudo npm install -g node-red
-echo "5. End of Node-Red installation: $?" >> $LOG_FILE
-
-#=======================================================================
-# 6. Node-Red Execution
-#=======================================================================
-#nohup node-red &
-echo "6. End of Node-Red execution: $?" >> $LOG_FILE
+sudo apt-get install -y dsc21=2.1.9-1 cassandra=2.1.9
+echo "5. End of Cassandra installation: $?" >> $LOG_FILE
 
 #=======================================================================
 # End.
