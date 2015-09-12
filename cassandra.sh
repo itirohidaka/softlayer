@@ -1,7 +1,7 @@
 #!/bin/bash
 #=======================================================================
 # File: nodered.sh
-# Description: Cassandra instalation for Ubuntu 14.04
+# Description: Cassandra  2.1.9 instalation for Ubuntu 14.04
 # Author: Gerson Itiro Hidaka
 # Date: 12/09/2015 (dd/mm/yyy)
 #==============================================================================
@@ -21,7 +21,7 @@ echo "1. End of Step 1 - Log Variable: $?" >> $LOG_FILE
 #=======================================================================
 # 2. Initial Configuration (Java and CURL)
 #=======================================================================
-sudo apt-get -y update
+#sudo apt-get -y update
 sudo apt-get install -y openjdk-7-jdk
 sudo apt-get install -y curl
 echo "deb http://debian.datastax.com/community stable main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
@@ -38,7 +38,7 @@ echo "3. End of Linux Update: $?" >> $LOG_FILE
 # 4. Cassandra Installation
 #=======================================================================
 sudo apt-get install -y dsc21=2.1.9-1 cassandra=2.1.9
-echo "4. End of Cassandra installation: $?" >> $LOG_FILE
+echo "4. End of Cassandra 2.1.9 installation: $?" >> $LOG_FILE
 
 #=======================================================================
 # End.
