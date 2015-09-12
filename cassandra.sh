@@ -26,6 +26,7 @@ sudo apt-get install -y software-properties-common
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install -y oracle-java8-installer
+sudo apt-get install -y curl
 echo "2. End of Step 2 - Initial Configuration: $?" >> $LOG_FILE
 
 #=======================================================================
@@ -43,7 +44,7 @@ echo "3. End of Linux Update: $?" >> $LOG_FILE
 echo "4. End of Pre-requisites installations for Node-Red: $?" >> $LOG_FILE
 
 #=======================================================================
-# 5. Node-Red Installation
+# 5. Cassandra Installation
 #=======================================================================
 #sudo npm install -g node-red
 echo "5. End of Node-Red installation: $?" >> $LOG_FILE
