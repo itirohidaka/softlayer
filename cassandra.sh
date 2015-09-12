@@ -25,6 +25,7 @@ echo "1. End of Step 1 - Log Variable: $?" >> $LOG_FILE
 sudo apt-get install -y software-properties-common
 sudo add-apt-repository ppa:webupd8team/java -y
 sudo apt-get -y update
+echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
 sudo apt-get install -y oracle-java8-installer
 sudo apt-get install -y curl
 echo "2. End of Step 2 - Initial Configuration: $?" >> $LOG_FILE
@@ -38,10 +39,12 @@ echo "3. End of Linux Update: $?" >> $LOG_FILE
 #=======================================================================
 # 4. Pre-requisites for Node-Red (Node.js)
 #=======================================================================
-#curl --silent --location https://deb.nodesource.com/setup_0.12 | sudo bash -
+mkdir ˜/temp
+cd ~/temp
+curl --silent --location http://downloads.datastax.com/community/dsc-cassandra-2.1.9-bin.tar.gz
 #sudo apt-get install --yes nodejs
 #sudo apt-get install --yes build-essential
-echo "4. End of Pre-requisites installations for Node-Red: $?" >> $LOG_FILE
+echo "4. End of Pre-requisites installations for Cassandra: $?" >> $LOG_FILE
 
 #=======================================================================
 # 5. Cassandra Installation
