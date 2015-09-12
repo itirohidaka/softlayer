@@ -22,11 +22,11 @@ echo "1. End of Step 1 - Log Variable: $?" >> $LOG_FILE
 # 2. Initial Configuration (Java)
 #=======================================================================
 #sudo su -
-sudo apt-get install -y software-properties-common
-sudo add-apt-repository ppa:webupd8team/java -y
+#sudo apt-get install -y software-properties-common
+#sudo add-apt-repository ppa:webupd8team/java -y
 sudo apt-get -y update
-echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
-sudo apt-get install -y oracle-java8-installer
+#echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
+sudo apt-get install -y openjdk-7-jdk
 sudo apt-get install -y curl
 echo "2. End of Step 2 - Initial Configuration: $?" >> $LOG_FILE
 
