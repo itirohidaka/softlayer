@@ -23,8 +23,8 @@ echo "1. End of Step 1 - Log Variable: $?" >> $LOG_FILE
 #=======================================================================
 #sudo su -
 sudo apt-get install -y software-properties-common
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
+sudo add-apt-repository ppa:webupd8team/java -y
+sudo apt-get -y update
 sudo apt-get install -y oracle-java8-installer
 sudo apt-get install -y curl
 echo "2. End of Step 2 - Initial Configuration: $?" >> $LOG_FILE
