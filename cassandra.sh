@@ -24,6 +24,8 @@ echo "1. End of Step 1 - Log Variable: $?" >> $LOG_FILE
 sudo apt-get -y update
 sudo apt-get install -y openjdk-7-jdk
 sudo apt-get install -y curl
+echo "deb http://debian.datastax.com/community stable main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
+curl -L http://debian.datastax.com/debian/repo_key | sudo apt-key add -
 echo "2. End of Step 2 - Initial Configuration: $?" >> $LOG_FILE
 
 #=======================================================================
@@ -33,17 +35,10 @@ sudo apt-get -y update
 echo "3. End of Linux Update: $?" >> $LOG_FILE
 
 #=======================================================================
-# 4. Pre-requisites for Cassandra
-#=======================================================================
-echo "deb http://debian.datastax.com/community stable main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
-curl -L http://debian.datastax.com/debian/repo_key | sudo apt-key add -
-echo "4. End of Pre-requisites installations for Cassandra: $?" >> $LOG_FILE
-
-#=======================================================================
-# 5. Cassandra Installation
+# 4. Cassandra Installation
 #=======================================================================
 sudo apt-get install -y dsc21=2.1.9-1 cassandra=2.1.9
-echo "5. End of Cassandra installation: $?" >> $LOG_FILE
+echo "4. End of Cassandra installation: $?" >> $LOG_FILE
 
 #=======================================================================
 # End.
